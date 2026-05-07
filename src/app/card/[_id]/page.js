@@ -1,35 +1,34 @@
-import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import Image from "next/image";
 
 export default async function ProductCard({ params }) {
   if (!params) {
     throw new Error("params is undefined");
   }
 
-  const { id } = params;
+  const { _id } = await params;
 
-  const res = await fetch("http://localhost:4000/products/" + id);
+  const res = await fetch("http://localhost:4000/products/" + _id);
   if (!res.ok) {
     const message = await res.text();
-    throw new Error(`Failed to load product ${id}: ${res.status} ${message}`);
+    throw new Error(`Failed to load product ${_id}: ${res.status} ${message}`);
   }
 
   const product = await res.json();
-  console.log(product);
+  const imageSrc = product.image || product["valid photo"];
 
   return (
     <Card className="w-[300px] rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105 duration-300">
-      {/* Image */}
-      {product.image ? (
+      {imageSrc ? (
         <div className="relative w-full h-[220px]">
-          {/* <Image
-            src={product.image}
+          <Image
+            src={imageSrc}
             alt={product.title}
             fill
+            unoptimized
             className="object-cover rounded-t-2xl"
-          /> */}
-          <Image src={product["valid photo"]} alt={product.title} fill />
+          />
         </div>
       ) : (
         <div className="w-full h-[220px] rounded-t-2xl bg-gray-100 flex items-center justify-center">
@@ -44,10 +43,8 @@ export default async function ProductCard({ params }) {
           {product.description}
         </p>
 
-        {/* Rating */}
-        <p className="text-yellow-500">⭐ {product.rating}</p>
+        <p className="text-yellow-500">Rating: {product.rating}</p>
 
-        {/* Price */}
         <p className="text-xl font-bold text-primary">${product.price}</p>
       </CardContent>
 

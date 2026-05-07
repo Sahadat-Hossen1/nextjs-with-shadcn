@@ -1,0 +1,84 @@
+{
+    "products":[
+  {
+    "_id": "prod_001",
+    "title": "Classic Cotton T-Shirt",
+    "description": "Breathable 100% cotton T-shirt, perfect for everyday wear.",
+    "valid photo": "https://example.com/photos/classic-cotton-tshirt.jpg",
+    "rating": 4.5,
+    "price": 19.99
+  },
+  {
+    "_id": "prod_002",
+    "title": "Slim Fit Jeans",
+    "description": "Stretchy denim slim-fit jeans with a modern cut.",
+    "valid photo": "https://example.com/photos/slim-fit-jeans.jpg",
+    "rating": 4.7,
+    "price": 49.99
+  },
+  {
+    "_id": "prod_003",
+    "title": "Wool Blend Coat",
+    "description": "Elegant wool-blend coat, ideal for cold weather and formal occasions.",
+    "valid photo": "https://example.com/photos/wool-blend-coat.jpg",
+    "rating": 4.9,
+    "price": 129.99
+  },
+  {
+    "_id": "prod_004",
+    "title": "Summer Linen Shirt",
+    "description": "Lightweight linen shirt, breathable and quick-drying for summer days.",
+    "valid photo": "https://example.com/photos/summer-linen-shirt.jpg",
+    "rating": 4.3,
+    "price": 34.50
+  },
+  {
+    "_id": "prod_005",
+    "title": "Yoga Leggings",
+    "description": "High-waist, moisture-wicking leggings for yoga and gym sessions.",
+    "valid photo": "https://example.com/photos/yoga-leggings.jpg",
+    "rating": 4.8,
+    "price": 29.99
+  },
+  {
+    "_id": "prod_006",
+    "title": "Leather Bomber Jacket",
+    "description": "Genuine leather bomber jacket with a vintage style and inner quilted lining.",
+    "valid photo": "https://example.com/photos/leather-bomber-jacket.jpg",
+    "rating": 4.6,
+    "price": 199.00
+  },
+  {
+    "_id": "prod_007",
+    "title": "Pleated Midi Skirt",
+    "description": "Elegant pleated midi skirt, suitable for both office and casual outings.",
+    "valid photo": "https://example.com/photos/pleated-midi-skirt.jpg",
+    "rating": 4.2,
+    "price": 45.99
+  },
+  {
+    "_id": "prod_008",
+    "title": "Hooded Sweatshirt",
+    "description": "Cozy fleece sweatshirt with a kangaroo pocket and adjustable hood.",
+    "valid photo": "https://example.com/photos/hooded-sweatshirt.jpg",
+    "rating": 4.4,
+    "price": 39.95
+  },
+  {
+    "_id": "prod_009",
+    "title": "Silk Scarf",
+    "description": "Luxurious 100% silk scarf with artistic pattern, lightweight and soft.",
+    "valid photo": "https://example.com/photos/silk-scarf.jpg",
+    "rating": 4.8,
+    "price": 24.50
+  },
+  {
+    "_id": "prod_010",
+    "title": "Cargo Pants",
+    "description": "Durable cotton cargo pants with multiple pockets and relaxed fit.",
+    "valid photo": "https://example.com/photos/cargo-pants.jpg",
+    "rating": 4.5,
+    "price": 59.99
+  }
+]
+}

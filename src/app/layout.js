@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/theme-provider";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/appSidebar";
+import Header from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,16 +24,49 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider  attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* <SidebarProvider>
+            <main className="w-full ">
+              <AppSidebar />
+              {children}
+            </main>
+          </SidebarProvider> */}
+           <SidebarProvider>
+          <div className="flex min-h-screen w-full">
+            {/* LEFT SIDEBAR */}
+            {/* <AppSidebar /> */}
+            <AppSidebar/>
+
+            {/* RIGHT SIDE */}
+            <div className="flex flex-1 flex-col">
+              {/* HEADER */}
+              <Header />
+
+              {/* CONTENT */}
+              <main className="flex-1 p-6">
+                <div className="">
+                  {children}
+                </div>
+              </main>
+
+              {/* FOOTER */}
+              <footer className="border-t bg-background px-6 py-4 text-sm text-muted-foreground">
+                © 2026 Dashboard Layout. All rights reserved.
+              </footer>
+            </div>
+          </div>
+        </SidebarProvider>
         </ThemeProvider>
-        </body>
+      </body>
     </html>
   );
 }

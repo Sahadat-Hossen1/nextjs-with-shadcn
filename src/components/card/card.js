@@ -1,4 +1,11 @@
-export default function cardList() {
+"use client";
+
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card";
+
 const products = [
   {
     _id: "EL001",
@@ -9,7 +16,6 @@ const products = [
     model: "HT-908 Pro",
     imgUrl: [
       "https://images.unsplash.com/photo-1585747860715-2ba37e788b70",
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9",
     ],
   },
   {
@@ -21,7 +27,6 @@ const products = [
     model: "PB-10K X1",
     imgUrl: [
       "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5",
-      "https://images.unsplash.com/photo-1587033411391-5d9e51cce126",
     ],
   },
   {
@@ -33,7 +38,6 @@ const products = [
     model: "NB-AirFlex",
     imgUrl: [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
-      "https://images.unsplash.com/photo-1577174881658-0f30ed549adc",
     ],
   },
   {
@@ -45,7 +49,6 @@ const products = [
     model: "SoundMini S2",
     imgUrl: [
       "https://images.unsplash.com/photo-1589003077984-894e133dabab",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d",
     ],
   },
   {
@@ -57,7 +60,6 @@ const products = [
     model: "ChargeMax 65",
     imgUrl: [
       "https://images.unsplash.com/photo-1583863788434-e58a36330cf0",
-      "https://images.unsplash.com/photo-1615526675159-e248c3021d3f",
     ],
   },
   {
@@ -69,7 +71,6 @@ const products = [
     model: "TimeGlow D1",
     imgUrl: [
       "https://images.unsplash.com/photo-1501139083538-0139583c060f",
-      "https://images.unsplash.com/photo-1519643381401-22c77e60520e",
     ],
   },
   {
@@ -81,7 +82,6 @@ const products = [
     model: "HeatGo K15",
     imgUrl: [
       "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6",
-      "https://images.unsplash.com/photo-1570222094114-d054a817e56b",
     ],
   },
   {
@@ -93,12 +93,55 @@ const products = [
     model: "GX-RGB Pro",
     imgUrl: [
       "https://images.unsplash.com/photo-1527814050087-3793815479db",
-      "https://images.unsplash.com/photo-1613141412501-9012977f1969",
     ],
   },
 ];
 
-    return (
-        <div></div>
-    );
+export default function ProductGrid() {
+  return (
+    <section className="max-w-7xl mx-auto px-4 py-10">
+      
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        {/* Mapping Products */}
+        {products.map((product) => (
+          <Card
+            key={product._id}
+            className="rounded-3xl border bg-white shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+          >
+            <CardContent className="p-5">
+              
+              {/* Product Image */}
+              <div className="relative w-full h-56 mb-5">
+                <Image
+                  src={product.imgUrl[0]}
+                  alt={product.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Product Title */}
+              <h2 className="text-lg font-semibold leading-7 line-clamp-2">
+                {product.title}
+              </h2>
+
+              {/* Product Price */}
+              <p className="text-2xl font-bold mt-4">
+                ৳ {product.price}
+              </p>
+
+              {/* Optional Extra Info */}
+              <div className="flex items-center justify-between mt-3 text-sm text-muted-foreground">
+                <span>⭐ {product.stare}</span>
+                <span>{product.model}</span>
+              </div>
+
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
 }

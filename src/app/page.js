@@ -1,6 +1,7 @@
 // import Header from "@/components/Header";
-import CardList from '@/components/card/cardList';
-import Header from './../components/header';
+// import CardList from '@/components/card/cardList';
+// import Header from './../components/header';
+import ProductGrid from '@/components/card/card';
 // import CardList from '/components/card/cardList';
 
 
@@ -14,8 +15,8 @@ export default function Home() {
       <p className="text-muted-foreground">
         This is the main content area. hello devoloper
       </p>
-
-      <CardList />
+        <ProductGrid/>
+      {/* <CardList /> */}
       {/* <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-xl border p-6">
           Card 1

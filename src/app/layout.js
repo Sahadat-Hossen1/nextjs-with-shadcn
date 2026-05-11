@@ -34,16 +34,10 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {/* <SidebarProvider>
-            <main className="w-full ">
-              <AppSidebar />
-              {children}
-            </main>
-          </SidebarProvider> */}
+        
            <SidebarProvider>
           <div className="flex min-h-screen w-full">
             {/* LEFT SIDEBAR */}
-            {/* <AppSidebar /> */}
             <AppSidebar/>
 
             {/* RIGHT SIDE */}

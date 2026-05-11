@@ -70,13 +70,6 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>test</SidebarGroupLabel>
-          <SidebarGroupContent>
-            
-          </SidebarGroupContent>
-        </SidebarGroup>
-
       </SidebarContent>
 
       {/* FOOTER */}

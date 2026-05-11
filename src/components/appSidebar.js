@@ -44,9 +44,9 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="bg-sidebar">
       {/* TOP */}
       <SidebarHeader className="border-b bg-header py-4">
-        <div className="flex items-center gap-2 px-2 py-2">
-          <div className="h-8 w-8 rounded-lg bg-primary" />
-          <span className="font-semibold">My App</span>
+        <div className="flex items-center gap-2 py-1 group-data-[collapsible=icon]:justify-center">
+          <div className="h-8 w-8 shrink-0 rounded-lg bg-primary" />
+          <span className="font-semibold group-data-[collapsible=icon]:hidden">My App</span>
         </div>
       </SidebarHeader>
 
@@ -70,10 +70,17 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>test</SidebarGroupLabel>
+          <SidebarGroupContent>
+            
+          </SidebarGroupContent>
+        </SidebarGroup>
+
       </SidebarContent>
 
       {/* FOOTER */}
-      <SidebarFooter className="border-t p-4 text-xs text-muted-foreground">
+      <SidebarFooter className="border-t p-4 text-xs text-muted-foreground group-data-[collapsible=icon]:hidden">
         Sidebar Footer
       </SidebarFooter>
     </Sidebar>
